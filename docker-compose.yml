@@ -1,0 +1,21 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+   nodejs:
+    build:
+      context: .
+      dockerfile: DockerFile        
+    image: nodejsimg
+    pull_policy: build
+    container_name: nodejscontainer
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - mongonetwork     
+      
+networks:
+    mongonetwork:
+      driver: bridge
+      

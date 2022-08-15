@@ -1,0 +1,33 @@
+docker-compose up or docker compose up
+docker-compose down
+docker-compose ps
+docker-compose up -d  //to run in detached mode
+
+docker-compose up build : //again rebuilding the image and starting container
+
+==========
+How to Fix "Buffering timed out after 10000ms" Error in Mongoose ?
+Ans-According to Documentation found in this link: https://mongoosejs.com/docs/connections.html#buffering
+
+Mongoose lets you start using your models immediately, without waiting for mongoose to establish a 
+connection to MongoDB.
+
+That's because mongoose buffers model function calls internally. This buffering is convenient, but also
+a common source of confusion. Mongoose will not throw any errors by default if you use a model without 
+connecting.
+
+TL;DR:
+
+Your model is being called before the connection is established. You need to use async/await with 
+connect() or createConnection(); or use .then(), as these functions return promises now from Mongoose 5.
+
+========Indexing in mongodb========
+
+
+==========
+Q-What is pull policy ?
+
+
+-->docker compose makes use of port exposed by dockerfile in its port mapping.
+
+Q-Environment based dockerfiles ?
